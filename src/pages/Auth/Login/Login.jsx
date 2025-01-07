@@ -23,7 +23,7 @@ function Loginpage({ user, setUser, setAuthScreen }) {
         <h2 className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
           <img
             className="w-container mr-2"
-            src="/dist/inventry-logo.jpg"
+            src="/public/img/inventry-logo.jpg"
             alt="logo"
           />
           Atinventory Management
