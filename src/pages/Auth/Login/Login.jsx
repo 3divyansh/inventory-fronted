@@ -22,9 +22,9 @@ function Loginpage({ user, setUser, setAuthScreen }) {
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto h-screen lg:py-0">
         <h2 className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
           <img
-            className="w-container mr-2"
-            src="/public/img/inventry-logo.jpg"
-            alt="/public/img/inventry-logo.jpg"
+            className="w-container mr-2 w-28 border-2"
+            src="https://th.bing.com/th/id/OIP.tCjm8KVBXRLwmWeLafFgsQHaCQ?rs=1&pid=ImgDetMain"
+            alt="samay-logo"
           />
           Atinventory Management
         </h2>
