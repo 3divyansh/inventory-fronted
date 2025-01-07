@@ -24,7 +24,7 @@ function Loginpage({ user, setUser, setAuthScreen }) {
           <img
             className="w-container mr-2"
             src="/public/img/inventry-logo.jpg"
-            alt="logo"
+            alt="/public/img/inventry-logo.jpg"
           />
           Atinventory Management
         </h2>
