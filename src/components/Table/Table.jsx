@@ -48,7 +48,7 @@ function Table({ product }) {
                 <td className="px-6 py-4">{item?.inventory}</td>
                 <td className="px-6 py-4">₹{item?.price}</td>
                 <td className="px-6 py-4">
-                  ${item?.price * item?.inventory} {/* Total value of that product */}
+                ₹{item?.price * item?.inventory} {/* Total value of that product */}
                 </td>
                 <td className="px-6 py-4 flex gap-4">
                   <ViewProduct id={item._id} />
