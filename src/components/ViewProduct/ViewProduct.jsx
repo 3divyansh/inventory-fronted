@@ -41,62 +41,68 @@ export function ViewProduct({ id }) {
   function handleView() {
     const selectedProduct = products?.find((data) => data._id === id);
     if (selectedProduct) {
+      console.log("Selected Product from Database:", selectedProduct);
       setProduct(selectedProduct);
     }
   }
+  
 
   return (
     <Drawer>
-      <DrawerTrigger asChild>
-        <img
-          src={eyeIcon}
-          className="w-4 h-4 cursor-pointer text-white"
-          onClick={handleView}
-        />
-      </DrawerTrigger>
+     <DrawerTrigger asChild>
+  <img
+    src={eyeIcon}
+    className="w-4 h-4 cursor-pointer text-white"
+    onClick={() => {
+      handleView(); 
+    }}
+  />
+</DrawerTrigger>
       <DrawerContent className="bg-appBg-dark">
         <div className="mx-auto w-full max-w-sm">
           {product ? (
             <>
               <DrawerHeader>
-                <DrawerTitle className="text-5xl">{product.brand}</DrawerTitle>
-                <DrawerDescription>{product.description}</DrawerDescription>
+                <DrawerTitle className="text-5xl">{product?.brand}</DrawerTitle>
+                <DrawerDescription>{product?.description}</DrawerDescription>
                 <DrawerDescription className="text-xl">
-                  SKU: {product.sku}
+                  SKU: {product?.sku}
                 </DrawerDescription>
                 <DrawerDescription className="text-xl">
-                  Category: {product.category}
+                  Category: {product?.category}
                 </DrawerDescription>
                 <DrawerDescription className="text-xl">
-                  Price: &#x20b9; {product.price}
+                  Price: &#x20b9; {product?.price}
                 </DrawerDescription>
                 <DrawerDescription className="text-xl">
-                  Quantity: {product.inventory}
+                  Quantity: {product?.inventory}
                 </DrawerDescription>
                 <DrawerDescription className="text-xl">
-                  Total: &#x20b9; {product.inventory * product.price}
+                  Total: &#x20b9; {product?.inventory * product?.price}
                 </DrawerDescription>
               </DrawerHeader>
+              <div className="flex gap-10">
               <div className="mt-4">
                 <h3 className="text-lg font-bold">Metafields:</h3>
-                <ul className="list-disc ml-6">
-                  <li>Case Material: {product.metafields?.caseMaterial}</li>
-                  <li>Dial Color: {product.metafields?.dialColor}</li>
-                  <li>
-                    Water Resistance: {product.metafields?.waterResistance}
-                  </li>
-                  <li>Warranty Period: {product.metafields?.warrantyPeriod}</li>
-                  <li>Movement: {product.metafields?.movement}</li>
-                  <li>Gender: {product.metafields?.gender}</li>
-                  <li>Case Size: {product.metafields?.caseSize}</li>
-                </ul>
+                <ul className="list-disc ml-6 w-full">
+            <li>Case Material: {product?.caseMaterial}</li>
+            <li>Dial Color: {product?.dialColor}</li>
+            <li>
+              Water Resistance: {product?.waterResistance}
+            </li>
+            <li>Warranty Period: {product?.warrantyPeriod}</li>
+            <li>Movement: {product?.movement}</li>
+            <li>Gender: {product?.gender}</li>
+            <li>Case Size: {product?.caseSize}</li>
+          </ul>
               </div>
-              <div className="mt-4">
-                <img
-                  src={product?.image?.url || product?.image.altText }
-                  alt={product?.image.altText || "Product Image"}
-                  className="w-full h-auto"
-                />
+              <div className="mt-4 w-1/2 ">
+              <img
+  src={product?.image }
+  alt={product?.image?.altText || "No Image Available"}
+  className="w-full h-auto"
+/>
+              </div>
               </div>
               <DrawerFooter>
                 <DrawerClose asChild>
