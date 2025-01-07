@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "ES6", // Specify the ECMAScript target version
+    "module": "commonjs", // Use CommonJS module system
+    "baseUrl": ".", // Base directory for resolving paths
+    "paths": {
+      "@/*": ["src/*"] // Map `@/` to the `src` folder
+    }
+  },
+  "exclude": ["node_modules", "dist"] // Exclude unnecessary folders
+}
